@@ -1,1 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Begin Your Transformation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .btn {
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn:hover {
+            transform: scale(1.05);
+        }
+        /* Styles for the modal */
+        #registration-modal {
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+
+    <div class="min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 lg:p-8" style="background-image: url('https://placehold.co/1920x1080/0a0a2a/e0e0e0?text=Subtle+Cosmic+Background'); background-size: cover; background-position: center;">
+        
+        <header class="text-center mb-12">
+            <h1 class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-white">
+                The Path of Transformation
+            </h1>
+            <p class="mt-4 text-lg sm:text-xl text-gray-300 max-w-3xl mx-auto">
+                Every journey of growth, whether personal or professional, begins with a single step. Choose the path that resonates with your intention today.
+            </p>
+        </header>
+
+        <main class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 gap-8">
+
+            <!-- Card 1: Meditation Path -->
+            <div class="card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-cyan-400"><path d="M12 2a10 10 0 1 0 10 10c0-4.42-2.87-8.17-6.84-9.5c.51.98.48 2.24-.09 3.22c-.49.84-1.22 1.48-2.07 1.75c-.84.27-1.78.2-2.58-.21c-.8-.41-1.42-1.06-1.76-1.88c-.34-.82-.32-1.78.06-2.58C9.4 1.99 10.65 1.5 12 2Z"/><path d="M12 16a6 6 0 1 0 0-12"/></svg>
+                </div>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-3 text-cyan-300">Intentional Evolution</h2>
+                <p class="text-gray-300 mb-6 flex-grow">
+                    An inward journey of meditation and self-discovery. Explore the 8 A's to cultivate mindfulness, inner peace, and a deeper connection with your authentic self.
+                </p>
+                <button data-path="meditation" data-url="#" class="journey-btn btn w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                    Begin Meditation Journey
+                </button>
+            </div>
+
+            <!-- Card 2: Executive & Organizational Path -->
+            <div class="card rounded-2xl p-8 flex flex-col items-center text-center">
+                <div class="mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-amber-400"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h2 class="font-serif text-2xl sm:text-3xl font-bold mb-3 text-amber-300">Executive & Organizational Growth</h2>
+                <p class="text-gray-300 mb-6 flex-grow">
+                    An outward journey of leadership and team transformation. Apply the 8 A's to elevate your leadership, enhance team cohesion, and build a thriving culture.
+                </p>
+                <div class="w-full space-y-4">
+                    <button data-path="individual" data-url="https://dt-bdlm.github.io/Digital_Fountain-2/?path=individual" class="journey-btn btn block w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                        Individual Coaching Path
+                    </button>
+                    <button data-path="organizational" data-url="https://dt-bdlm.github.io/Digital_Fountain-2/?path=organizational" class="journey-btn btn block w-full bg-amber-700 hover:bg-amber-600 text-white font-bold py-3 px-6 rounded-lg text-lg">
+                        Organizational Path
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Registration Modal -->
+    <div id="registration-modal" class="hidden fixed inset-0 bg-gray-900 bg-opacity-80 flex items-center justify-center p-4 z-50">
+        <div class="bg-gray-800 rounded-2xl p-8 w-full max-w-md transform transition-all" id="modal-content">
+            <h2 class="font-serif text-2xl font-bold mb-2 text-white">Join the Journey</h2>
+            <p class="text-gray-400 mb-6">Enter your details to continue to the experience.</p>
+            
+            <form id="registration-form">
+                <input type="hidden" id="selected-path" name="path">
+                
+                <div class="mb-4">
+                    <label for="full-name" class="block text-gray-300 text-sm font-bold mb-2">Full Name</label>
+                    <input type="text" id="full-name" name="fullName" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="email" class="block text-gray-300 text-sm font-bold mb-2">Email Address</label>
+                    <input type="email" id="email" name="email" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500" required>
+                </div>
+
+                <div class="mb-4">
+                    <label for="phone" class="block text-gray-300 text-sm font-bold mb-2">Phone Number (Optional)</label>
+                    <input type="tel" id="phone" name="phone" class="w-full bg-gray-700 border border-gray-600 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500">
+                </div>
+
+                <div class="flex items-center mb-6">
+                    <input type="checkbox" id="newsletter-opt-in" name="newsletterOptIn" class="w-4 h-4 text-cyan-600 bg-gray-700 border-gray-600 rounded focus:ring-cyan-500">
+                    <label for="newsletter-opt-in" class="ml-2 text-sm text-gray-300">Receive occasional emails and newsletters.</label>
+                </div>
+
+                <div class="flex items-center justify-between">
+                    <button type="button" id="close-modal-btn" class="text-gray-400 hover:text-white">Cancel</button>
+                    <button type="submit" id="submit-btn" class="btn bg-green-600 hover:bg-green-500 text-white font-bold py-2 px-6 rounded-lg">
+                        Submit & Enter
+                    </button>
+                </div>
+                 <p id="form-message" class="text-center text-sm mt-4"></p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // Your web app's Firebase configuration from your project settings
+        const firebaseConfig = {
+            apiKey: "AIzaSyCMSrq9DoCu41pfAqawdMbLFXonagDrIAM",
+            authDomain: "intentional-evolutionapp.firebaseapp.com",
+            projectId: "intentional-evolutionapp",
+            storageBucket: "intentional-evolutionapp.appspot.com",
+            messagingSenderId: "81341452814",
+            appId: "1:81341452814:web:a5df85de62da275c50625f",
+            measurementId: "G-LQWZDT8MC5"
+        };
+
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+
+        // --- DOM Elements ---
+        const modal = document.getElementById('registration-modal');
+        const modalContent = document.getElementById('modal-content');
+        const journeyButtons = document.querySelectorAll('.journey-btn');
+        const closeModalBtn = document.getElementById('close-modal-btn');
+        const registrationForm = document.getElementById('registration-form');
+        const selectedPathInput = document.getElementById('selected-path');
+        const submitBtn = document.getElementById('submit-btn');
+        const formMessage = document.getElementById('form-message');
+
+        let destinationUrl = '';
+
+        // --- Event Listeners ---
+
+        // Open the modal when a journey button is clicked
+        journeyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const path = button.dataset.path;
+                destinationUrl = button.dataset.url;
+                selectedPathInput.value = path;
+                modal.classList.remove('hidden');
+            });
+        });
+
+        // Close the modal
+        const closeModal = () => {
+            modal.classList.add('hidden');
+            registrationForm.reset();
+            formMessage.textContent = '';
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Submit & Enter';
+        };
+
+        closeModalBtn.addEventListener('click', closeModal);
+        modal.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        // Handle form submission
+        registrationForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
+            
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Saving...';
+            formMessage.textContent = '';
+
+            try {
+                // Get data from the form
+                const formData = new FormData(registrationForm);
+                const leadData = {
+                    path: formData.get('path'),
+                    fullName: formData.get('fullName'),
+                    email: formData.get('email'),
+                    phone: formData.get('phone'),
+                    newsletterOptIn: formData.get('newsletterOptIn') === 'on',
+                    createdAt: serverTimestamp() // Adds a server-side timestamp
+                };
+
+                // Add a new document with a generated ID to the "leads" collection
+                const docRef = await addDoc(collection(db, "leads"), leadData);
+                console.log("Document written with ID: ", docRef.id);
+
+                formMessage.textContent = 'Success! Redirecting...';
+                formMessage.classList.add('text-green-400');
+
+                // Redirect to the destination URL after a short delay
+                setTimeout(() => {
+                    window.location.href = destinationUrl;
+                }, 1000);
+
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                formMessage.textContent = 'An error occurred. Please try again.';
+                formMessage.classList.add('text-red-400');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Submit & Enter';
+            }
+        });
+
+    </script>
+</body>
+</html>
 
